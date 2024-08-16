@@ -13,7 +13,7 @@ export const Register = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
   // const handleRegister = () => {};
-  const handleRegister = (e: { preventDefault: () => void }) => {
+  const handleRegister = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
     if (password != confirmPassword) {
       setMessage("The password is not consistently the same");
@@ -22,6 +22,27 @@ export const Register = () => {
     }
     const user = { username, password };
     console.log(user);
+    try {
+      const response = await fetch("http://localhost:8080/api/v1/user", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(user),
+      });
+      if (!response.ok) {
+        const err = await response.json();
+        console.log("Error data:", err);
+        setMessage(err.message || "An error occurred");
+      } else {
+        console.log("New user added");
+        setUsername("");
+        setPassword("");
+        setConfirmPassword("");
+      }
+    } catch (err) {
+      setMessage(
+        "Network error: " + (err.message || "An unknown error occurred")
+      );
+    }
   };
 
   return (
