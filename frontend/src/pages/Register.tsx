@@ -3,18 +3,37 @@ import { Link } from "react-router-dom";
 import { InputField } from "../components/InputField";
 import { CardBox } from "../components/CardBox";
 import { Button } from "../components/Button";
+import { Alert } from "../components/Alert";
 
 export const Register = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [alertVisible, setAlertVisibility] = useState(false);
+  const [message, setMessage] = useState("");
+
   const [confirmPassword, setConfirmPassword] = useState("");
-  const handleRegister = () => {};
+  // const handleRegister = () => {};
+  const handleRegister = (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+    if (password != confirmPassword) {
+      setMessage("The password is not consistently the same");
+      setAlertVisibility(true);
+      return;
+    }
+    const user = { username, password };
+    console.log(user);
+  };
 
   return (
     <div className="d-flex align-items-center vh-100">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-4 col-8">
+            {alertVisible && (
+              <Alert color="warning" onClose={() => setAlertVisibility(false)}>
+                {message}
+              </Alert>
+            )}
             <CardBox heading="Sign up to Todoloo~">
               <form>
                 <InputField

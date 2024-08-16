@@ -4,7 +4,7 @@ interface Props {
   children: string;
   color: "primary" | "secondary";
   type: "button" | "submit";
-  onClick: () => void;
+  onClick: (e: { preventDefault: () => void }) => void;
 }
 
 export const Button = ({ children, color, type, onClick }: Props) => {
