@@ -12,9 +12,8 @@ export const Register = () => {
   const [message, setMessage] = useState("");
 
   const [confirmPassword, setConfirmPassword] = useState("");
-  // const handleRegister = () => {};
-  const handleRegister = async (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+
+  const handleRegister = async () => {
     if (password != confirmPassword) {
       setMessage("The password is not consistently the same");
       setAlertVisibility(true);
