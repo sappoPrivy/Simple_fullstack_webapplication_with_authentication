@@ -1,0 +1,6 @@
+.btn-block.custom-size{
+    height: 1.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

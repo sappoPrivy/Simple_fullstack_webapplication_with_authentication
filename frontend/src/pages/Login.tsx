@@ -45,7 +45,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="d-flex align-items-center vh-100">
+    <div className="d-flex align-items-center vh-70">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-xl-3 col-lg-4 col-md-6 col-7">
@@ -75,6 +75,8 @@ export const Login = () => {
                   Sign in
                 </Button>
               </form>
+            </CardBox>
+            <CardBox>
               <p className="text-center">
                 New to Todoloo~? <Link to="/register">Sign up.</Link>
               </p>

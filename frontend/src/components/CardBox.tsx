@@ -8,7 +8,7 @@ interface Props {
 export const CardBox = ({ children /*, heading*/ }: Props) => {
   return (
     <>
-      <div className="card border-0 shadow-sm">
+      <div className="card border-1 m-2">
         <div className="card-body">{children}</div>
       </div>
     </>
