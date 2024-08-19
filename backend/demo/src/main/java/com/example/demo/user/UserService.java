@@ -30,7 +30,7 @@ public class UserService {
 
 		// Username is already present
 		if(userOptional.isPresent()) {
-			throw new IllegalStateException("Username is not available");
+			throw new IllegalStateException("Username is taken");
 		}
 
 		// Username is available
@@ -62,7 +62,7 @@ public class UserService {
 
 			// Username is already present
 			if(userOptional.isPresent()) {
-				throw new IllegalStateException("Username not available");
+				throw new IllegalStateException("Username is taken");
 			}
 
 			// Username is available

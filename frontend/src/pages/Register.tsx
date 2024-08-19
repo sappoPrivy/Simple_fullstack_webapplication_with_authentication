@@ -13,12 +13,15 @@ export const Register = () => {
 
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const handleRegister = async () => {
+  const handleRegister = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
+
     if (password != confirmPassword) {
-      setMessage("The password is not consistently the same");
+      setMessage("The password does not match");
       setAlertVisibility(true);
       return;
     }
+
     const user = { username, password };
     console.log(user);
 
@@ -27,10 +30,12 @@ export const Register = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(user),
     });
+
     if (!response.ok) {
       const err = await response.json();
       console.log("Error data:", err);
       setMessage(err.message || "An error occurred");
+      setAlertVisibility(true);
     } else {
       console.log("New user added");
       setUsername("");
@@ -45,7 +50,7 @@ export const Register = () => {
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-4 col-8">
             {alertVisible && (
-              <Alert color="warning" onClose={() => setAlertVisibility(false)}>
+              <Alert color="danger" onClose={() => setAlertVisibility(false)}>
                 {message}
               </Alert>
             )}

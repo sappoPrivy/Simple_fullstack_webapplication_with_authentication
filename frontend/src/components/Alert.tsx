@@ -16,6 +16,11 @@ export const Alert = ({ children, color, onClose }: Props) => {
         data-bs-dismiss="alert"
         aria-label="Close"
         onClick={onClose}
+        style={{
+          width: "0.75em",
+          height: "0.75em",
+          fontSize: "0.75em",
+        }}
       ></button>
     </div>
   );

@@ -1,16 +1,26 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { InputField } from "../components/InputField";
 import { CardBox } from "../components/CardBox";
 import { Button } from "../components/Button";
+import axios from "axios";
+import { Alert } from "../components/Alert";
 
 export const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [alertVisible, setAlertVisibility] = useState(false);
+  const [message, setMessage] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
-  const handleLogin = async () => {
+
+  // useEffect(() => {
+  //   console.log("Code with Sappis");
+  // });
+
+  const handleLogin = async (e: { preventDefault: () => void }) => {
+    e.preventDefault();
     const response = await fetch(
-      "http://localhost:8080/api/v1/user/${username}",
+      "http://localhost:8080/api/v1/user/" + username,
       {
         method: "GET",
         headers: { "Content-Type": "application/json" },
@@ -18,18 +28,23 @@ export const Login = () => {
     );
 
     if (!response.ok) {
-      const errorData = await response.json();
-      console.log("Error data:", errorData);
-      return;
-    }
-    const data = await response.json();
-    console.log("Error data:", data);
-    if (data) {
-      if (password == data.password) {
-        setLoggedIn(true);
+      const err = await response.json();
+      console.log("Error data:", err.message);
+      setMessage(err.message || "An error occurred");
+      setAlertVisibility(true);
+    } else {
+      const data = await response.json();
+      console.log("", data);
+      // User exists
+      if (data && password == data.password) {
         console.log("Logged IN");
         setUsername("");
         setPassword("");
+      }
+      // User does not exist
+      else {
+        setMessage("Username or password incorrect");
+        setAlertVisibility(true);
       }
     }
   };
@@ -39,6 +54,11 @@ export const Login = () => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-md-6 col-lg-4 col-8">
+            {alertVisible && (
+              <Alert color="danger" onClose={() => setAlertVisibility(false)}>
+                {message}
+              </Alert>
+            )}
             <CardBox heading="Sign in to Todoloo~">
               <form>
                 <InputField
