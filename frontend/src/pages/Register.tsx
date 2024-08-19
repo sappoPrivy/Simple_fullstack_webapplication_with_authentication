@@ -4,8 +4,12 @@ import { InputField } from "../components/InputField";
 import { CardBox } from "../components/CardBox";
 import { Button } from "../components/Button";
 import { Alert } from "../components/Alert";
+import { useUser } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 
-export const Register = () => {
+export const Register: React.FC = () => {
+  const { register } = useUser();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -37,10 +41,18 @@ export const Register = () => {
       setMessage(err.message || "An error occurred");
       setAlertVisibility(true);
     } else {
+      const userResponse = await fetch(
+        "http://localhost:8080/api/v1/user/" + username
+      );
+      const userData = await userResponse.json();
       console.log("New user added");
+
       setUsername("");
       setPassword("");
       setConfirmPassword("");
+
+      register(userData);
+      navigate("/home");
     }
   };
 

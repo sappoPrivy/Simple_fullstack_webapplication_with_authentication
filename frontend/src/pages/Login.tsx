@@ -4,8 +4,12 @@ import { InputField } from "../components/InputField";
 import { CardBox } from "../components/CardBox";
 import { Button } from "../components/Button";
 import { Alert } from "../components/Alert";
+import { useUser } from "../UserContext";
+import { useNavigate } from "react-router-dom";
 
-export const Login = () => {
+export const Login: React.FC = () => {
+  const { login } = useUser();
+  const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [alertVisible, setAlertVisibility] = useState(false);
@@ -35,6 +39,8 @@ export const Login = () => {
         console.log("Logged IN");
         setUsername("");
         setPassword("");
+        login(data);
+        navigate("/home");
       }
       // User does not exist
       else {

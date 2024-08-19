@@ -10,7 +10,9 @@ interface Props {
 export const Alert = ({ children, color, onClose }: Props) => {
   return (
     <div
-      className={"alert alert-" + color + " alert-dismissible custom-font-size"}
+      className={
+        "alert alert-" + color + " alert-dismissible custom-font-size m-2"
+      }
       role="alert"
     >
       {children}
