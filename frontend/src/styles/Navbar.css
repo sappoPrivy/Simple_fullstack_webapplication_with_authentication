@@ -1,0 +1,35 @@
+.nav-container {
+    display: flex;
+    height: 100vh;
+    background-color: #;
+}
+
+.main-content {
+    flex: 7; /* Takes up 70% of the width */
+    background-color: #f6f8fa;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    flex: 3; /* Takes up 30% of the width */
+    background-color: white;
+    color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar a {
+    color: #24292e;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+}
+
+.sidebar a:hover {
+    background-color: #f6f8fa;
+}
+
+.sidebar a.active{
+    border-left: 4px solid rgb(95, 95, 237);
+}
