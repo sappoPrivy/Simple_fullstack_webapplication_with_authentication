@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { InputField } from "../components/InputField";
 import { CardBox } from "../components/CardBox";
 import { Button } from "../components/Button";
-import axios from "axios";
 import { Alert } from "../components/Alert";
 
 export const Login = () => {
@@ -11,11 +10,7 @@ export const Login = () => {
   const [password, setPassword] = useState("");
   const [alertVisible, setAlertVisibility] = useState(false);
   const [message, setMessage] = useState("");
-  const [loggedIn, setLoggedIn] = useState(false);
-
-  // useEffect(() => {
-  //   console.log("Code with Sappis");
-  // });
+  //const [loggedIn, setLoggedIn] = useState(false);
 
   const handleLogin = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -43,7 +38,7 @@ export const Login = () => {
       }
       // User does not exist
       else {
-        setMessage("Username or password incorrect");
+        setMessage("Incorrect username or password.");
         setAlertVisibility(true);
       }
     }
@@ -53,13 +48,14 @@ export const Login = () => {
     <div className="d-flex align-items-center vh-100">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-6 col-lg-4 col-8">
+          <div className="col-xl-3 col-lg-4 col-md-6 col-7">
+            <h4 className="mb-3 text-center ">Sign in to Todoloo~</h4>
             {alertVisible && (
               <Alert color="danger" onClose={() => setAlertVisibility(false)}>
                 {message}
               </Alert>
             )}
-            <CardBox heading="Sign in to Todoloo~">
+            <CardBox>
               <form>
                 <InputField
                   label="Username"

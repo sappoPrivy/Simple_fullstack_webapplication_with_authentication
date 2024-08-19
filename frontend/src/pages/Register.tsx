@@ -48,13 +48,14 @@ export const Register = () => {
     <div className="d-flex align-items-center vh-100">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-md-6 col-lg-4 col-8">
+          <div className="col-xl-3 col-lg-4 col-md-6 col-7">
+            <h4 className="mb-3 text-center ">Sign up to Todoloo~</h4>
             {alertVisible && (
               <Alert color="danger" onClose={() => setAlertVisibility(false)}>
                 {message}
               </Alert>
             )}
-            <CardBox heading="Sign up to Todoloo~">
+            <CardBox>
               <form>
                 <InputField
                   label="Username"

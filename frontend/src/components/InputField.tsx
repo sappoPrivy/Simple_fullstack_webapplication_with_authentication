@@ -10,8 +10,8 @@ interface Props {
 
 export const InputField = ({ id, type, label, value, onChange }: Props) => {
   return (
-    <div className="form-group">
-      <label>{label}</label>
+    <div className="form-group mt-2">
+      <label className="mb-2">{label}</label>
       <input
         type={type}
         id={id}
