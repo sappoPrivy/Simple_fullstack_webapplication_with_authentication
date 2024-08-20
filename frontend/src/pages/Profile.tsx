@@ -5,14 +5,14 @@ import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/Navbar";
 import { Header } from "../components/Header";
 
-export const Home: React.FC = () => {
+export const Profile: React.FC = () => {
   const { user } = useUser();
   const navigate = useNavigate();
 
-  // const handleLogout = () => {
-  //   logout();
-  //   navigate("/"); // Redirect to Login page
-  // };
+  //   const handleLogout = () => {
+  //     logout();
+  //     navigate("/"); // Redirect to Login page
+  //   };
 
   if (!user) {
     navigate("/");
@@ -21,8 +21,9 @@ export const Home: React.FC = () => {
   return (
     <>
       <Header />
-      <Navbar activeChild="home">
-        <p>Welcome to this site!</p>
+      <Navbar activeChild="profile">
+        <h4 className="">Username: {user.username}</h4>
+        <h4 className="">Password: {user.password}</h4>
       </Navbar>
     </>
   );

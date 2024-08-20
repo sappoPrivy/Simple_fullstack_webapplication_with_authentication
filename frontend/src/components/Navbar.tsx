@@ -1,25 +1,28 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import "/home/sappo/simple_fullstack_app/frontend/src/styles/Navbar.css";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   activeChild: string;
+  children: ReactNode;
 }
-export const Navbar = ({ activeChild }: Props) => {
+export const Navbar = ({ activeChild, children }: Props) => {
   // List of all pages
   // Then map the pages
   // If pagename matches activeChild -> add active to the className
-  const pages = ["home", "profile", "larum ipsum"];
+  const pages = ["home", "profile", "about"];
+  const navigate = useNavigate();
 
   return (
     <div className="nav-container">
       <div className="sidebar">
         {pages.map((page, index) =>
-          page == activeChild ? (
+          page === activeChild ? (
             <a
               aria-current="true"
               key={index}
               className="active"
-              href={"http://127.0.0.1:5173/" + page}
+              onClick={() => navigate("/" + page)}
             >
               {page}
             </a>
@@ -27,7 +30,7 @@ export const Navbar = ({ activeChild }: Props) => {
             <a
               className="border-bottom border-1 border-grey"
               key={index}
-              href={"http://127.0.0.1:5173/" + page}
+              onClick={() => navigate("/" + page)}
             >
               {page}
             </a>
@@ -35,10 +38,8 @@ export const Navbar = ({ activeChild }: Props) => {
         )}
       </div>
       <div className="main-content">
-        <h1>Main Content</h1>
-        <p>
-          This is the main content area. The sidebar is positioned on the right.
-        </p>
+        <h1>{activeChild}</h1>
+        {children}
       </div>
     </div>
   );
