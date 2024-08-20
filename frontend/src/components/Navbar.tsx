@@ -24,13 +24,17 @@ export const Navbar = ({ activeChild }: Props) => {
               {page}
             </a>
           ) : (
-            <a key={index} href={"http://127.0.0.1:5173/" + page}>
+            <a
+              className="border-bottom border-1 border-grey"
+              key={index}
+              href={"http://127.0.0.1:5173/" + page}
+            >
               {page}
             </a>
           )
         )}
       </div>
-      <div className="content">
+      <div className="main-content">
         <h1>Main Content</h1>
         <p>
           This is the main content area. The sidebar is positioned on the right.
