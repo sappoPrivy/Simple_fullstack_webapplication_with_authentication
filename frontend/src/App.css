@@ -1,3 +1,17 @@
 .vh-70 {
     height: 70vh;
 }
+.navbar{
+    background-color: #f6f8fa;
+}
+.form-control.custom-field{
+    height: 1.75rem;
+    background-color: #f6f8fa;
+    max-width: 50%;
+}
+.btn-block.custom-size{
+    height: 1.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

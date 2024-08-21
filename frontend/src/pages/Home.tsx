@@ -2,8 +2,9 @@ import React from "react";
 // import { Button } from "../components/Button";
 import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import { Sidebar } from "../components/Sidebar";
 import { Navbar } from "../components/Navbar";
-import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 export const Home: React.FC = () => {
   const { user } = useUser();
@@ -20,10 +21,11 @@ export const Home: React.FC = () => {
   }
   return (
     <>
-      <Header />
-      <Navbar activeChild="home">
+      <Navbar />
+      <Sidebar activeChild="Home">
         <p>Welcome to this site!</p>
-      </Navbar>
+      </Sidebar>
+      <Footer />
     </>
   );
 };

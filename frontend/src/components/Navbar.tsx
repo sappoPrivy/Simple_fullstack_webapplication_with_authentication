@@ -1,46 +1,38 @@
-import React, { ReactNode } from "react";
-import "/home/sappo/simple_fullstack_app/frontend/src/styles/Navbar.css";
+import React from "react";
+import { useUser } from "../UserContext";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-interface Props {
-  activeChild: string;
-  children: ReactNode;
-}
-export const Navbar = ({ activeChild, children }: Props) => {
-  // List of all pages
-  // Then map the pages
-  // If pagename matches activeChild -> add active to the className
-  const pages = ["home", "profile", "about"];
+export const Navbar = () => {
+  const { user, logout } = useUser();
   const navigate = useNavigate();
 
+  const handleLogout = () => {
+    logout();
+    navigate("/"); // Redirect to Login page
+  };
+
+  if (!user) {
+    navigate("/");
+    return null;
+  }
   return (
-    <div className="nav-container">
-      <div className="sidebar">
-        {pages.map((page, index) =>
-          page === activeChild ? (
-            <a
-              aria-current="true"
-              key={index}
-              className="active"
-              onClick={() => navigate("/" + page)}
-            >
-              {page}
-            </a>
-          ) : (
-            <a
-              className="border-bottom border-1 border-grey"
-              key={index}
-              onClick={() => navigate("/" + page)}
-            >
-              {page}
-            </a>
-          )
-        )}
+    <>
+      <div className="navbar border">
+        <div className="d-flex justify-content-start">
+          <span className="navbar-brand mb-0 h1 ms-3 ">Todoloo~</span>
+        </div>
+        <div className="d-flex justify-content-end">
+          <button
+            className="btn rounded border border-1 border-grey"
+            type="button"
+            onClick={handleLogout}
+          >
+            <FontAwesomeIcon icon={faSignOutAlt} />
+          </button>
+        </div>
       </div>
-      <div className="main-content">
-        <h1>{activeChild}</h1>
-        {children}
-      </div>
-    </div>
+    </>
   );
 };
