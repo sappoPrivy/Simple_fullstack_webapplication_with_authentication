@@ -45,8 +45,8 @@ public class UserController {
     }
 
     @PutMapping(path = "{user_id}")
-    public void updateUser(@PathVariable("user_id") Integer user_id, @RequestParam(required = false) String username,@RequestParam(required = false) String password, @RequestParam(required = false) Boolean is_admin ){
-        userService.updateUser(user_id, username, password, is_admin);
+    public void updateUser(@PathVariable("user_id") Integer user_id, @RequestBody User updatedUser ){
+        userService.updateUser(user_id, updatedUser);
     }
 
     @GetMapping("{username}")

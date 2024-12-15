@@ -51,9 +51,13 @@ public class UserService {
     }
 
 	@Transactional
-    public void updateUser(Integer user_id, String username, String password, Boolean is_admin ) {
+    public void updateUser(Integer user_id, User updatedUser) {
         // Get the user
         User user = userRepository.findById(user_id).orElseThrow(() -> new IllegalStateException("User  (id:" + user_id + ") does not exist"));
+		String username = updatedUser.getUsername();
+		String password = updatedUser.getPassword();
+		Boolean is_admin = updatedUser.getIs_admin();
+
 		if(username != null && username.length() > 0 && !Objects.equals(user.getUsername(), username)){
 
 			// Find user by username
@@ -77,6 +81,8 @@ public class UserService {
 		if(is_admin != null && !Objects.equals(user.getIs_admin(), is_admin)){
 			user.setIs_admin(is_admin);
 		}
+		
+		userRepository.save(user);
 		
     }
 

@@ -11,6 +11,7 @@ interface User {
 // Define the shape of the context value
 interface UserContextType {
   user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
   login: (userData: User) => void;
   logout: () => void;
   register: (userData: User) => void;
@@ -30,7 +31,7 @@ export const UserProvider: React.FC<{ children: ReactNode }> = ({
   const register = (userData: User) => setUser(userData);
 
   return (
-    <UserContext.Provider value={{ user, login, logout, register }}>
+    <UserContext.Provider value={{ user, setUser, login, logout, register }}>
       {children}
     </UserContext.Provider>
   );
