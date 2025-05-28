@@ -10,7 +10,7 @@ Code written by Tenzin Sangpo Choedon
 - [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [Usage](#-usage)
-- [Thesis Document](#-thesis-document)
+- [Documentations](#-documentations)
 
 ## 🏗️ Project Structure
 
@@ -53,7 +53,7 @@ Run the scripts in this order:
 
 1. **Database**  
    ```bash
-   python src/preprocess_data.py
+   ...
    ```
 2. **...**  
    ```bash
@@ -65,6 +65,12 @@ Run the scripts in this order:
    ```
 
 
-## 📘 Thesis Document
-[📄 Read the Thesis](docs/Thesis.pdf)
+## 📘 Documentations
+[📄 View the frontend design in Figma](https://www.figma.com/design/UNFxV34ATeXhXqA3p3tdEG/Todo-list-webapplication?node-id=1-2&p=f)
+
+[📄 View the database design in drawio]([docs/todo-list-database-design.png])
+
+[📄 View the requirements of this project]([docs/Requirements.pdf])
+
+
 
