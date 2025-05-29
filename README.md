@@ -43,7 +43,7 @@ root/
 │   │   └── main.tsx  
 │   └── index.html  
 ├── docs/  
-│   ├── todo-list-database-design.png  
+│   ├── database-design.png  
 │   └── Requirements.pdf  
 ├── README.md  
 └── .gitignore  
