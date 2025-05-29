@@ -2,7 +2,7 @@
 Code written by Tenzin Sangpo Choedon
 
 ## 📄 Overview
-...
+This simple fullstack webapplication has a login, logout, sing-up and home page with menu options. The original vision of this website is to create a fully functional todo list. However, the focus shifted to understanding how to utilize and apply the technologies for frontend and backend through Spring Boot and React TypeScript, respectively.
 
 ## 🗂️ Table of Contents
 
