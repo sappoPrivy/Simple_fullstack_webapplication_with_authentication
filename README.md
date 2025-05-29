@@ -15,14 +15,36 @@ Code written by Tenzin Sangpo Choedon
 ## 🏗️ Project Structure
 
 root/  
-├── src/  
-│   ├── preprocess_data.py  
-│   ├── process_CCM_subjects.py  
+├── backend/demo/  
+│   ├── src/main/  
+│   │   ├── java/com/example/demo  
+│   │   │   ├── user/  
+│   │   │   │   ├── User.java  
+│   │   │   │   ├── UserConfig.java  
+│   │   │   │   ├── UserController.java  
+│   │   │   │   ├── UserRepository.java  
+│   │   │   │   └── UserService.java  
+│   │   │   └── DemoApplication.java  
+│   │   └── resources/applications.properties  
 │   └── eval_CCM_subjects.py  
+├── frontend/  
+│   ├── src/  
+│   │   ├── assets/  
+│   │   │   │   └── ...  
+│   │   ├── components/
+│   │   │   │   └── ...  
+│   │   ├── pages/  
+│   │   │   │   └── ...  
+│   │   ├── styles/  
+│   │   │   │   └── ...  
+│   │   ├── App.css  
+│   │   ├── App.tsx  
+│   │   ├── UserContext.tsx  
+│   │   └── main.tsx  
+│   └── index.html  
 ├── docs/  
-│   ├── thesis.pdf  
-│   └── references.bib  
-├── data/    
+│   ├── todo-list-database-design.png  
+│   └── Requirements.pdf  
 ├── README.md  
 └── .gitignore  
 
