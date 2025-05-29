@@ -90,7 +90,7 @@ Run the scripts in this order:
 ## 📘 Documentations
 [📄 View the frontend design in Figma](https://www.figma.com/design/UNFxV34ATeXhXqA3p3tdEG/Todo-list-webapplication?node-id=1-2&p=f)
 
-[📄 View the database design in drawio]([docs/todo-list-database-design.png])
+[📄 View the database design in drawio]([docs/database-design.png])
 
 [📄 View the requirements of this project]([docs/Requirements.pdf])
 
