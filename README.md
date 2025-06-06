@@ -7,10 +7,15 @@ This simple fullstack webapplication has a login, logout, sign-up and home page 
 ## 🗂️ Table of Contents
 
 - [Overview](#-overview)
+- [Prototype](#-prototype)
 - [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [Usage](#-usage)
 - [Documentations](#-documentations)
+
+## Prototype
+
+!! This is currently being edited !!
 
 ## 🏗️ Project Structure
 
@@ -71,7 +76,7 @@ root/
 
 ## 🚀 Usage
 
-!! This is under editing !!
+!! This is currently being edited !!
 
 Run the scripts in this order:
 
@@ -95,6 +100,3 @@ Run the scripts in this order:
 [📄 View the database design in drawio](docs/database-design.png)
 
 [📄 View the requirements of this project](docs/Requirements.pdf)
-
-
-
