@@ -80,17 +80,19 @@ root/
 
 Run the scripts in this order:
 
-1. **Database**  
+1. **Run database in Docker**  
    ```bash
-   ...
+   docker start <container-name-or-id>
    ```
-2. **...**  
+2. **Run Spring Boot Maven-based backend**  
    ```bash
-   ...
+   cd root/backend
+   ./mvnw spring-boot:run
    ```
-3. **...**  
+3. **Run React Vite-based Frontend**  
    ```bash
-   ...
+   cd root/frontend
+   npm run dev
    ```
 
 
