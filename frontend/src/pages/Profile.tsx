@@ -20,6 +20,7 @@ export const Profile: React.FC = () => {
   const [password, setPassword] = useState(user.password);
   const [alertVisible, setAlertVisibility] = useState(false);
   const [message, setMessage] = useState("");
+  const [alertColor, setAlertColor] = useState("danger");
 
   interface UpdatedUserData {
     username?: string;
@@ -31,32 +32,42 @@ export const Profile: React.FC = () => {
     const userId = user.user_id;
     const updatedUser: UpdatedUserData = {};
 
-    if (password !== user.password) updatedUser.password = password;
-    if (username !== user.username) updatedUser.username = username;
+    if(password == user.password && username == user.username){
+      console.log("No updated user information!");
+    }
+    else{
+      if (password !== user.password) updatedUser.password = password;
+      if (username !== user.username) updatedUser.username = username;
 
-    const response = await fetch(
-      "http://localhost:8080/api/v1/user/" + userId,
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(updatedUser),
+      const response = await fetch(
+        "http://localhost:8080/api/v1/user/" + userId,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(updatedUser),
+        }
+      );
+
+      if (!response.ok) {
+        const err = await response.json();
+        console.log("Error data:", err);
+        setMessage(err.message || "An error occurred");
+        setAlertColor("danger");
+        setAlertVisibility(true);
+      } 
+      else {
+        console.log("Updated user");
+        setMessage("Successfully updated profile!");
+        setAlertColor("success");
+        setAlertVisibility(true);
+        setUser((user) => ({
+          ...user,
+          username: updatedUser.username || user.username,
+          password: updatedUser.password || user.password,
+        }));
       }
-    );
-
-    if (!response.ok) {
-      const err = await response.json();
-      console.log("Error data:", err);
-      setMessage(err.message || "An error occurred");
-      setAlertVisibility(true);
-    } else {
-      console.log("Updated user");
-      setUser((user) => ({
-        ...user,
-        username: updatedUser.username || user.username,
-        password: updatedUser.password || user.password,
-      }));
     }
   };
 
@@ -65,7 +76,7 @@ export const Profile: React.FC = () => {
       <Navbar />
       <Sidebar activeChild="Profile">
         {alertVisible && (
-          <Alert color="danger" onClose={() => setAlertVisibility(false)}>
+          <Alert color={alertColor} onClose={() => setAlertVisibility(false)}>
             {message}
           </Alert>
         )}
