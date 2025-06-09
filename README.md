@@ -82,7 +82,7 @@ Run the scripts in this order:
 
 1. **Run database in Docker**  
    ```bash
-   docker start <container-name-or-id>
+   docker-compose up -d
    ```
 2. **Run Spring Boot Maven-based backend**  
    ```bash
