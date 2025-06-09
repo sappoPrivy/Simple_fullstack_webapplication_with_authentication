@@ -67,8 +67,6 @@ root/
 
 ## 🚀 Usage
 
-!! This is currently being edited !!
-
 Run the scripts in this order:
 
 1. **Run database in Docker from root**  
