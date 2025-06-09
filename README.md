@@ -7,13 +7,13 @@ This simple fullstack webapplication has a login, logout, sign-up and home page 
 ## 🗂️ Table of Contents
 
 - [Overview](#-overview)
-- [Prototype](#-prototype)
+- [Demo](#-demo)
 - [Project Structure](#-project-structure)
 - [Prerequisites](#-prerequisites)
 - [Usage](#-usage)
 - [Documentations](#-documentations)
 
-## Prototype
+## Demo
 
 !! This is currently being edited !!
 
