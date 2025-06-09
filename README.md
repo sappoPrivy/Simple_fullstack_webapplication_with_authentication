@@ -87,7 +87,7 @@ Run the scripts in this order:
 -->
 
 2. **Test the webapplication on the browser**  
-   http://localhost:5173/
+   http://localhost:5173/  
    http://localhost:8080/api/v1/user
 
 ## 📘 Documentations
