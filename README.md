@@ -23,12 +23,7 @@ root/
 ├── backend/demo/          # Spring boot Maven-based backend
 │   ├── src/main/  
 │   │   ├── java/com/example/demo  
-│   │   │   ├── user/  
-│   │   │   │   ├── User.java  
-│   │   │   │   ├── UserConfig.java  
-│   │   │   │   ├── UserController.java  
-│   │   │   │   ├── UserRepository.java  
-│   │   │   │   └── UserService.java  
+│   │   │   ├── user/      # User class, configurations, controller, respository and service layer files  
 │   │   │   └── DemoApplication.java  
 │   │   └── resources/applications.properties  
 ├── frontend/                #  React Vite-based frontend  
