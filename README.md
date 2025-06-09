@@ -1,4 +1,4 @@
-# Simple Fullstack Webapplication using Spring boot and React Typescript
+# Simple Fullstack Webapplication with Authentication using Spring boot and React Typescript
 Code written by Tenzin Sangpo Choedon
 
 ## 📄 Overview
