@@ -80,7 +80,7 @@ root/
 
 Run the scripts in this order:
 
-1. **Run database in Docker**  
+1. **Run database in Docker from root**  
    ```bash
    docker-compose up -d
    ```
