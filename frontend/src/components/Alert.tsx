@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "/home/sappo/simple_fullstack_app/frontend/src/styles/Alert.css";
+import "../styles/Alert.css";
 
 interface Props {
   children: ReactNode;
