@@ -20,7 +20,7 @@ This simple fullstack webapplication has a login, logout, sign-up, profile and h
 ## 🏗️ Project Structure
 
 root/  
-├── backend/demo/  
+├── backend/demo/          # Spring boot Maven-based backend
 │   ├── src/main/  
 │   │   ├── java/com/example/demo  
 │   │   │   ├── user/  
@@ -31,16 +31,12 @@ root/
 │   │   │   │   └── UserService.java  
 │   │   │   └── DemoApplication.java  
 │   │   └── resources/applications.properties  
-├── frontend/  
+├── frontend/                #  React Vite-based frontend  
 │   ├── src/  
 │   │   ├── assets/  
-│   │   │   │   └── ...  
-│   │   ├── components/  
-│   │   │   │   └── ...  
-│   │   ├── pages/  
-│   │   │   │   └── ...  
-│   │   ├── styles/  
-│   │   │   │   └── ...  
+│   │   ├── components/      # Reusable typescript components  
+│   │   ├── pages/           # Typescript pages  
+│   │   ├── styles/          # CSS styles  
 │   │   ├── App.css  
 │   │   ├── App.tsx  
 │   │   ├── UserContext.tsx  
