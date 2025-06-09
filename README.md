@@ -20,7 +20,7 @@ This simple fullstack webapplication has a login, logout, sign-up, profile and h
 ## 🏗️ Project Structure
 
 root/  
-├── backend/demo/          # Spring boot Maven-based backend
+├── backend/demo/          # Spring boot Maven-based backend  
 │   ├── src/main/  
 │   │   ├── java/com/example/demo  
 │   │   │   ├── user/      # User class, configurations, controller, respository and service layer files  
