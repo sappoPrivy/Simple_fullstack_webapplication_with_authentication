@@ -1,5 +1,5 @@
 # Simple Fullstack Webapplication with Authentication using Spring boot and React Typescript
-Code written by Tenzin Sangpo Choedon
+Code written by Tenzin Sangpo Choedon, Summer 2024
 
 ## 📄 Overview
 This simple fullstack webapplication has a login, logout, sign-up, profile and home page with menu options. The original vision of this website is to create a fully functional todo-list, integrated with a calendar. Therefore, the database design includes tables for lists, tasks and planned tasks in the calendar. However, the focus shifted to understanding how to utilize and apply the technologies for frontend and backend through Spring Boot and React TypeScript, respectively. Thus, the scope was limited to authentication and home pages. The current fuctionalities includes all CRUD operations for a user instance, which is applied on the postgresSQL database in the docker container.
@@ -15,7 +15,7 @@ This simple fullstack webapplication has a login, logout, sign-up, profile and h
 
 ## Demo
 
-!! This is currently being edited !!
+[Watch the video](docs/demo.mp4)
 
 ## 🏗️ Project Structure
 
@@ -39,6 +39,7 @@ root/
 │   └── index.html  
 ├── docs/  
 │   ├── database-design.png  
+│   ├── demo.mp4  
 │   └── Requirements.pdf  
 ├── docker-compose.yml  
 ├── README.md  
