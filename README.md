@@ -15,7 +15,7 @@ This simple fullstack webapplication has a login, logout, sign-up, profile and h
 
 ## Demo
 
-[Watch the demo!](https://www.youtube.com/watch?v=N-nHs1oFD2I.jpg)(https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=N-nHs1oFD2I)
+[![Watch the demo!](https://www.youtube.com/watch?v=N-nHs1oFD2I.jpg)](https://www.youtube.com/watch?v=VIDEO_ID](https://www.youtube.com/watch?v=N-nHs1oFD2I)
 
 ## 🏗️ Project Structure
 
