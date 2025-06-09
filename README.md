@@ -88,6 +88,7 @@ Run the scripts in this order:
 
 2. **Test the webapplication on the browser**  
    http://localhost:5173/
+   http://localhost:8080/api/v1/user
 
 ## 📘 Documentations
 [📄 View the frontend design in Figma](https://www.figma.com/design/UNFxV34ATeXhXqA3p3tdEG/Todo-list-webapplication?node-id=1-2&p=f)
