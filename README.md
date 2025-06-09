@@ -77,12 +77,12 @@ Run the scripts in this order:
    ```
 2. **Run Spring Boot Maven-based backend**  
    ```bash
-   cd root/backend
+   cd backend/
    ./mvnw spring-boot:run
    ```
 3. **Run React Vite-based Frontend**  
    ```bash
-   cd root/frontend
+   cd frontend/
    npm run dev
    ```
 
