@@ -84,7 +84,7 @@ Run the scripts in this order:
    npm run dev
    ```
 
-4. **Test the website**  
+4. **Test the webapplication on the browser**  
    http://127.0.0.1:5173/
 
 ## 📘 Documentations
