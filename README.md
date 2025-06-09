@@ -31,7 +31,6 @@ root/
 │   │   │   │   └── UserService.java  
 │   │   │   └── DemoApplication.java  
 │   │   └── resources/applications.properties  
-│   └── eval_CCM_subjects.py  
 ├── frontend/  
 │   ├── src/  
 │   │   ├── assets/  
@@ -50,6 +49,7 @@ root/
 ├── docs/  
 │   ├── database-design.png  
 │   └── Requirements.pdf  
+├── docker-compose.yml  
 ├── README.md  
 └── .gitignore  
 
