@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import "/home/sappo/simple_fullstack_app/frontend/src/styles/Sidebar.css";
+import "../styles/Sidebar.css";
 import { useNavigate } from "react-router-dom";
 
 interface Props {

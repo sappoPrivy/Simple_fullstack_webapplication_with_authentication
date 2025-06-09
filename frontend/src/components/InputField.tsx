@@ -1,5 +1,5 @@
 import React from "react";
-import "/home/sappo/simple_fullstack_app/frontend/src/styles/InputField.css";
+import "../styles/InputField.css";
 
 interface Props {
   id: string;

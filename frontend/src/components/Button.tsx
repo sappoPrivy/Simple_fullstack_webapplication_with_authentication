@@ -1,5 +1,5 @@
 import React from "react";
-import "/home/sappo/simple_fullstack_app/frontend/src/styles/Button.css";
+import "../styles/Button.css";
 
 interface Props {
   children: string;

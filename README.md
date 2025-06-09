@@ -20,12 +20,14 @@ This simple fullstack webapplication has a login, logout, sign-up, profile and h
 ## 🏗️ Project Structure
 
 root/  
-├── backend/demo/          # Spring boot Maven-based backend  
-│   ├── src/main/  
-│   │   ├── java/com/example/demo  
-│   │   │   ├── user/      # User class, configurations, controller, respository and service layer files  
-│   │   │   └── DemoApplication.java  
-│   │   └── resources/applications.properties  
+├── backend/          # Spring boot Maven-based backend  
+│   ├── demo/  
+│   │   ├── src/main/  
+│   │   │   ├── java/com/example/demo  
+│   │   │   │   ├── user/      # User class, configurations, controller, respository and service layer files  
+│   │   │   │   └── DemoApplication.java  
+│   │   │   └── resources/applications.properties  
+│   │   └── Dockerfile    
 ├── frontend/                #  React Vite-based frontend  
 │   ├── src/  
 │   │   ├── assets/  
@@ -36,38 +38,36 @@ root/
 │   │   ├── App.tsx  
 │   │   ├── UserContext.tsx  
 │   │   └── main.tsx  
-│   └── index.html  
+│   ├── index.html  
+│   └── Dockerfile   
 ├── docs/  
 │   ├── database-design.png  
 │   ├── demo.mp4  
 │   └── Requirements.pdf  
-├── docker-compose.yml  
+├── docker-compose.yml        # Multi-container Docker applications (fronent, backend, db)  
 ├── README.md  
 └── .gitignore  
 
 ## ✅ Prerequisites
 
-**Java 17**  
-- Required OpenJDK packages:  
-  ```bash
-  sudo apt install openjdk-17-jdk -y
-  ```
-  
-**Node and npm**
-- Download nodejs and npm:
-  ```bash
-  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-  sudo apt install -y nodejs
-  ```
-
 **Docker**
-- Download node.js and npm:
+- Download docker (ubuntu):
   ```bash
+  sudo apt update
   sudo apt install -y docker.io
   ```
 
 ## 🚀 Usage
 
+1. **Run the application through Docker**  
+   ```bash
+   docker-compose up --build
+   ```
+   - Database (PostgreSQL) runs in docker container locally
+   - Frontend (React Typescript Vite-based app) runs on port 5173
+   - Backend (Spring Boot Maven-based app) runs on port 8080
+
+<!-- 
 Run the scripts in this order:
 
 1. **Run database in Docker from root**  
@@ -84,8 +84,9 @@ Run the scripts in this order:
    cd frontend/
    npm run dev
    ```
+-->
 
-4. **Test the webapplication on the browser**  
+2. **Test the webapplication on the browser**  
    http://127.0.0.1:5173/
 
 ## 📘 Documentations
